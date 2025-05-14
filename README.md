@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+📺 YouTube Clone
+A modern and responsive YouTube clone built using React.js, styled with Tailwind CSS, and powered by the YouTube Data API v3. Users can search, browse, and watch videos dynamically—just like on real YouTube!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🔧 Tech Stack
+⚛️ React.js – Frontend library for UI components
 
-## Available Scripts
+🎨 Tailwind CSS – Utility-first CSS for styling
 
-In the project directory, you can run:
+🌐 Fetch API + Async/Await – For making YouTube API calls
 
-### `npm start`
+🧭 React Router DOM – For dynamic routing
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🔍 YouTube Data API v3 – Real-time video search & metadata
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🚀 Features
+✅ Search videos by keyword
 
-### `npm test`
+✅ Watch video in an embedded player
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+✅ Browse recommended videos
 
-### `npm run build`
+✅ Responsive layout for mobile and desktop
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+✅ Clean, reusable components
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+✅ Dynamic routing (watch pages based on video ID)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+📸 Demo
+📷 Add screenshots or screen recordings here
 
-### `npm run eject`
+Live Demo: https://videotubetype.netlify.app/
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+🔑 YouTube API Setup
+Go to Google Cloud Console
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Create a new project and enable YouTube Data API v3
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Generate an API key
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Add the API key to a .env file:
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+REACT_APP_YOUTUBE_API_KEY=your_api_key_here
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+const fetchVideos = async () => {
+  const res = await fetch(
+    `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=reactjs&type=video&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
+  );
+  const data = await res.json();
+  setVideos(data.items);
+};
+🧰 Installation
+bash
+Copy
+Edit
+git clone https://github.com/yourusername/youtube-clone.git
+cd youtube-clone
+npm install
+npm start
