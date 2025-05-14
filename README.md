@@ -25,8 +25,6 @@ A modern and responsive YouTube clone built using React.js, styled with Tailwind
 
 ✅ Dynamic routing (watch pages based on video ID)
 
-📸 Demo
-📷 Add screenshots or screen recordings here
 
 Live Demo: https://videotubetype.netlify.app/
 
@@ -50,10 +48,8 @@ const fetchVideos = async () => {
   setVideos(data.items);
 };
 🧰 Installation
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/youtube-clone.git
+
+git clone https://github.com/RavinaNegi/videoTube.git
 cd youtube-clone
 npm install
 npm start
